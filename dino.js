@@ -1,6 +1,6 @@
 
 console.log('dinos');
-
+/*
 const dinosaurs = [
   {
     dinoType: 't-rex',
@@ -30,11 +30,15 @@ const dinoPrinter = (dinosaurs) => {
 }
 
 dinoPrinter();
-
+*/
 
 // Assignment Viewer
 
-/*
+const printToDom = (toPrint, divId) => {
+  document.getElementById(divId).innerHTML += toPrint
+}
+
+
 const assignments = [
   {
     title: 'Course 1',
@@ -75,30 +79,28 @@ const assignments = [
 
 
 
-  const printToDom = (toPrint, divId) => {
-    document.getElementById(divId).innerHTML += toPrint
-  }
-
-
-  const assignmentPrinter = (assignmentsArr) => {
-    for (let i = 0; i < assignmentsArr.length; i++) { 
-        const assignment = assignmentsArr[i]
-        const stringToPrint = `
-        <div class="assignment-card">
-            <h2>${assignment.title}</h2>
-            <p>${assignment.dueDate}</p>
-            <h3>${assignment.topic}</h3>
-            <p>${assignment.notes}</p>
-            <p>${assignment.assignmentUrl}</p>
-        </div>
-        
-        `
-        printToDom(stringToPrint, 'assignment-div');
-    }
-  }
   
-  assignmentPrinter(assignments);
-*/
+
+
+  const assignmentToPrint = (lesson) => {
+    for (let i=0; i < lesson.length; i++) {
+        const lessonAssigned = lesson[i];
+        const lessonToDo = `
+        <div class='assignment-card'>
+            <h3>${lessonAssigned.title}</h3>
+            <p>${lessonAssigned.dueDate}</p>
+            <p>${lessonAssigned.topic}</p>
+            <p>${lessonAssigned.notes}</p>
+            <p>${lessonAssigned.assignmentURL}</p>
+        </div>
+        `
+        printToDOM(lessonToDo, 'lessons');
+    }
+}
+
+assignmentToPrint(assignments);
+
+
 
 
 

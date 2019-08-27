@@ -8,3 +8,10 @@ body {
   width: 200px;
   text-align: center;
 }
+
+.assignment-card {
+  background-color: darkgreen;
+  color: black;
+  width: 300px;
+  text-align: center;
+}
